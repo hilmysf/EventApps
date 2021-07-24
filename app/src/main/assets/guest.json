@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Andi",
+    "birthdate": "2014-01-01"
+  },
+  {
+    "id": 2,
+    "name": "Budi",
+    "birthdate": "2014-02-02"
+  },
+  {
+    "id": 3,
+    "name": "Charlie",
+    "birthdate": "2014-03-03"
+  },
+  {
+    "id": 4,
+    "name": "Dede",
+    "birthdate": "2014-06-06"
+  },
+  {
+    "id": 5,
+    "name": "Joko",
+    "birthdate": "2014-02-12"
+  }
+]

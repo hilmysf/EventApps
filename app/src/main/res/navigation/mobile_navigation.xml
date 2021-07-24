@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/navigation_home"
+    android:id="@+id/mobile_navigation">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="hilmysf.eventapps.ui.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_guest"
+            app:destination="@id/navigation_guest" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_event"
+            app:destination="@id/navigation_event" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_event"
+        android:name="hilmysf.eventapps.ui.EventFragment"
+        android:label="EventFragment"
+        tools:layout="@layout/fragment_event">
+        <action
+            android:id="@+id/action_navigation_event_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="default_name" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_guest"
+        android:name="hilmysf.eventapps.ui.GuestFragment"
+        android:label="GuestFragment"
+        tools:layout="@layout/fragment_guest">
+        <action
+            android:id="@+id/action_navigation_guest_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
