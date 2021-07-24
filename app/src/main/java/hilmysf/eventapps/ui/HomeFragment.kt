@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
 import hilmysf.eventapps.R
 import hilmysf.eventapps.databinding.FragmentHomeBinding
@@ -39,10 +38,10 @@ class HomeFragment : Fragment() {
             btnChooseGuest.setOnClickListener {
                 navController.navigate(R.id.action_navigation_home_to_navigation_guest)
             }
-            if (arguments?.getString("eventName") != null ) {
+            if (arguments?.getString("eventName") != null) {
                 btnChooseEvent.text = arguments?.getString("eventName")
             }
-            if (arguments?.getString("guestName") != null){
+            if (arguments?.getString("guestName") != null) {
                 btnChooseGuest.text = arguments?.getString("guestName")
             }
         }

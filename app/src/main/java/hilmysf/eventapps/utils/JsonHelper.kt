@@ -1,8 +1,6 @@
 package hilmysf.eventapps.utils
 
 import android.content.Context
-import androidx.core.content.res.ResourcesCompat
-import hilmysf.eventapps.R
 import hilmysf.eventapps.data.GuestEntity
 import hilmysf.eventapps.data.GuestImageDummy
 import org.json.JSONArray
@@ -29,7 +27,7 @@ class JsonHelper(private val context: Context) {
         val list = ArrayList<GuestEntity>()
         try {
             val response = JSONArray(parsingFileToString("guest.json").toString())
-            for (i in 0 until response.length() ) {
+            for (i in 0 until response.length()) {
                 val guest = response.getJSONObject(i)
 
                 val id = guest.getInt("id")

@@ -23,22 +23,25 @@ class GuestFragment : Fragment() {
         binding = FragmentGuestBinding.inflate(layoutInflater)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         list = JsonHelper(requireContext()).loadGuests()
         list.addAll(list)
         showRecyclerView()
     }
-    private fun showRecyclerView(){
+
+    private fun showRecyclerView() {
         binding.apply {
-            rvGuest.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
+            rvGuest.layoutManager =
+                GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
             guestAdapter = GuestAdapter(this@GuestFragment)
             guestAdapter.setGuest(list)
             rvGuest.adapter = guestAdapter
         }
     }
 
-    private fun convertBirthdayToAge(){
+    private fun convertBirthdayToAge() {
 
     }
 }

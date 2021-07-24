@@ -5,9 +5,9 @@ import hilmysf.eventapps.R
 object EventDummyData {
     val eventData = arrayOf(
         EventEntity(
-        R.drawable.bisnis,
-        "Perjalanan Bisnis Seorang Juara",
-        "Nov 09 2014"
+            R.drawable.bisnis,
+            "Perjalanan Bisnis Seorang Juara",
+            "Nov 09 2014"
         ),
         EventEntity(
             R.drawable.pesta,

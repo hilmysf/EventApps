@@ -37,7 +37,7 @@ class GuestAdapter(val parentFragment: Fragment) :
                     val bundle = bundleOf("guestName" to guestName)
                     NavHostFragment.findNavController(parentFragment)
                         .navigate(R.id.action_navigation_guest_to_navigation_home, bundle)
-                    Toast.makeText(parentFragment.context, handphone, Toast.LENGTH_SHORT ).show()
+                    Toast.makeText(parentFragment.context, handphone, Toast.LENGTH_SHORT).show()
                 }
             }
         }

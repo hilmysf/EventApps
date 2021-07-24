@@ -1,6 +1,5 @@
 package hilmysf.eventapps.adapter
 
-import android.util.EventLog
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
@@ -11,9 +10,6 @@ import com.bumptech.glide.Glide
 import hilmysf.eventapps.R
 import hilmysf.eventapps.data.EventEntity
 import hilmysf.eventapps.databinding.ItemEventBinding
-import hilmysf.eventapps.databinding.ItemGuestBinding
-import hilmysf.eventapps.ui.EventFragmentDirections
-import hilmysf.eventapps.ui.HomeFragmentDirections
 
 class EventAdapter(val parentFragment: Fragment) :
     RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
