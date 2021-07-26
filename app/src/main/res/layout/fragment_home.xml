@@ -28,12 +28,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="16dp"
             android:text="Your Name"
             android:textColor="@color/black"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/btn_choose_event"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_title_name" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_choose_event"

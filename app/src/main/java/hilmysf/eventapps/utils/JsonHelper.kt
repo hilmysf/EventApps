@@ -1,8 +1,8 @@
 package hilmysf.eventapps.utils
 
 import android.content.Context
-import hilmysf.eventapps.data.GuestEntity
-import hilmysf.eventapps.data.GuestImageDummy
+import hilmysf.eventapps.data.source.entities.GuestEntity
+import hilmysf.eventapps.data.dummy.GuestDummy
 import org.json.JSONArray
 import org.json.JSONException
 import java.io.IOException
@@ -33,7 +33,7 @@ class JsonHelper(private val context: Context) {
                 val id = guest.getInt("id")
                 val name = guest.getString("name")
                 val birthdate = guest.getString("birthdate")
-                var image = GuestImageDummy.guestImage[i].image
+                var image = GuestDummy.guestDummy[i].image
 
                 val guestEntity = GuestEntity(id, name, birthdate, image)
                 list.add(guestEntity)

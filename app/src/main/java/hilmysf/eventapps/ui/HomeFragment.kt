@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
+import dagger.hilt.android.AndroidEntryPoint
 import hilmysf.eventapps.R
 import hilmysf.eventapps.databinding.FragmentHomeBinding
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     companion object {
         var EXTRA_NAME = "extra_name"
@@ -16,8 +18,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var name: String
-    private var lastEventArguments: String? = null
-    private var lastGuestArguments: String? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

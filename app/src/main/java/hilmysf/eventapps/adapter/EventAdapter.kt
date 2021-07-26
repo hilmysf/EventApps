@@ -8,7 +8,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import hilmysf.eventapps.R
-import hilmysf.eventapps.data.EventEntity
+import hilmysf.eventapps.data.source.entities.EventEntity
 import hilmysf.eventapps.databinding.ItemEventBinding
 
 class EventAdapter(val parentFragment: Fragment) :
@@ -55,4 +55,5 @@ class EventAdapter(val parentFragment: Fragment) :
     }
 
     override fun getItemCount(): Int = listEvent.size
+
 }

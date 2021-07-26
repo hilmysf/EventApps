@@ -9,10 +9,9 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import hilmysf.eventapps.R
-import hilmysf.eventapps.data.GuestEntity
+import hilmysf.eventapps.data.source.entities.GuestEntity
 import hilmysf.eventapps.databinding.ItemGuestBinding
-import java.text.SimpleDateFormat
-import java.util.*
+import hilmysf.eventapps.utils.Helper
 
 class GuestAdapter(val parentFragment: Fragment) :
     RecyclerView.Adapter<GuestAdapter.GuestViewHolder>() {
@@ -33,11 +32,12 @@ class GuestAdapter(val parentFragment: Fragment) :
                 tvGuestName.text = guest?.nama
                 itemView.setOnClickListener {
                     val guestName = tvGuestName.text.toString()
-                    val handphone = convertBirthdayToHandphone(guest)
+                    val handphone = Helper.convertBirthdayToHandphone(guest)
+                    val month = Helper.isPrime(guest)
                     val bundle = bundleOf("guestName" to guestName)
                     NavHostFragment.findNavController(parentFragment)
                         .navigate(R.id.action_navigation_guest_to_navigation_home, bundle)
-                    Toast.makeText(parentFragment.context, handphone, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(parentFragment.context, "$handphone and it is $month", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -56,20 +56,4 @@ class GuestAdapter(val parentFragment: Fragment) :
 
     override fun getItemCount(): Int = listGuest.size / 2
 
-    private fun convertBirthdayToHandphone(guest: GuestEntity?): String {
-        val format = SimpleDateFormat("yyyy-mm-dd")
-        val date = format.parse(guest?.birthDate)
-        val myCal = GregorianCalendar()
-        myCal.time = date
-        val birthday = myCal.get(Calendar.DAY_OF_MONTH)
-        return if (birthday % 2 == 0 && birthday % 3 == 0) {
-            "iOS"
-        } else if (birthday % 3 == 0) {
-            "android"
-        } else if (birthday % 2 == 0) {
-            "blackberry"
-        } else {
-            "feature phone"
-        }
-    }
 }
